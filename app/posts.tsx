@@ -5,11 +5,16 @@ import { User } from '../interfaces/user';
 
 // prop -> URL ->string
 
-interface iPostPage {
-    URL?: string
+// interface iPostPage {
+//     URL?: string
+// }
+
+type PostProps = {
+    URL: string,
+    id: number,
 }
 
-const Page: React.FC<iPostPage> = () => {
+const Page: React.FC<PostProps> = () => {
 
     const [users, setUsers] = useState<User[]>([]);
 
