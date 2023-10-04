@@ -3,7 +3,7 @@ import { useLocalSearchParams } from 'expo-router';
 
 const Page = () => {
     const { id } = useLocalSearchParams();
-    return <Text>Detail {id}</Text>
+    return <Text>user Detail page: {id}</Text>
 }
 
 export default Page

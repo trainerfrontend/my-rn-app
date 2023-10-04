@@ -1,10 +1,23 @@
-import { Text, TextInput, StyleSheet, View, FlatList } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
+import { Link } from 'expo-router';
 
 const ListItem = ({ listItem }) => {
     return <View>
-        <Text>{listItem.name}</Text>
-        <Text>{listItem.dept}</Text>
+        <Link href={`/${listItem.id}`}><Text style={styles.heading}>{listItem.name}</Text></Link>
+        <Text style={styles.subheading}>{listItem.email}</Text>
     </View>
 }
+
+const styles = StyleSheet.create({
+    heading: {
+        color: 'blue',
+        fontSize: 24
+    },
+    subheading: {
+        color: '#999',
+        fontSize: 18,
+        marginBottom: 15
+    }
+})
 
 export default ListItem

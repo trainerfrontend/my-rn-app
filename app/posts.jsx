@@ -1,6 +1,6 @@
-import { Text, TextInput, StyleSheet, View, FlatList } from 'react-native';
+import { Text, StyleSheet, View, FlatList } from 'react-native';
 import { useEffect, useState } from 'react';
-import { Link } from 'expo-router';
+import ListItem from '../components/ListItem';
 
 
 export default function page() {
@@ -20,11 +20,7 @@ export default function page() {
         <FlatList
             data={users}
             keyExtractor={item => item.id}
-            renderItem={({ item }) => <View>
-
-                <Link href={`/${item.id}`}><Text>{item.name}</Text></Link>
-                <Text>{item.username}</Text>
-            </View>
+            renderItem={({ item }) => <ListItem listItem={item} />
             } />
 
     </View >
