@@ -1,5 +1,6 @@
 import { Text, TextInput, StyleSheet, View, FlatList } from 'react-native';
 import { useEffect, useState } from 'react';
+import { Link } from 'expo-router';
 
 
 export default function page() {
@@ -21,7 +22,7 @@ export default function page() {
             keyExtractor={item => item.id}
             renderItem={({ item }) => <View>
 
-                <Text>{item.name}</Text>
+                <Link href={`/${item.id}`}><Text>{item.name}</Text></Link>
                 <Text>{item.username}</Text>
             </View>
             } />
